@@ -3,38 +3,123 @@ body {
     background-color: #d596ff;
 }
 
+.siteHeader {
+    background-color: #f8f3fc;
+    box-shadow: 0 3px 12px rgb(34 0 55 / 15%);
+    font-family: Arial, sans-serif;
+}
+
+.siteHeader__brand {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo:focus-visible {
+    outline: 3px solid #8f43bd;
+    outline-offset: 4px;
+    border-radius: 50%;
+}
+
+.navbar__menu {
+    display: block;
+    flex: 0 0 auto;
+}
+
+.menu-toggle {
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font: inherit;
+    padding: 10px;
+    cursor: pointer;
+}
+
 .navbar {
     background-color: #3c0362;
     color: #ffffff;
     width: 100%;
 }
 
-.navbar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 1rem;
-}
-
 .navbar a {
     color: #ffffff;
+    display: block;
+    padding: 0.85rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 150ms ease;
 }
 
 .navbar ul {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     margin: 0;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     list-style: none;
 }
 
-.navbar a {
-    text-decoration: none;
+.navbar li {
+    flex: 0 0 auto;
 }
 
 .navbar a:hover,
 .navbar a:focus-visible {
+    background-color: #5a1683;
     text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.navbar__admin {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.navbar:not(.is-open) li:not(.navbar__menu):not(.navbar__home) {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle:focus-visible {
+        outline: 3px solid #8f43bd;
+        outline-offset: 2px;
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .navbar li {
+        flex: 1 1 40%;
+    }
+
+    .navbar li.navbar__home {
+        flex: 1 1 40%;
+    }
+
+    .navbar li.navbar__admin {
+        flex: 1 1 40%;
+        margin-left: 0;
+        text-align: right;
+    }
 }

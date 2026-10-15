@@ -6,6 +6,8 @@
     <title>Travelly</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="uploads/Travelly.png" type="image/png">
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/a369785260.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <?php include 'includes/header.php'; ?>
