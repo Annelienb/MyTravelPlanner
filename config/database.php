@@ -7,13 +7,9 @@ $hosts = array_values(array_unique(array_filter([
     'localhost',
 ])));
 $port = getenv('DB_PORT') ?: '3306';
-$db = getenv('DB_NAME') ?: 'Travelly';
-$user = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASS');
-
-if ($password === false) {
-    $password = 'root';
-}
+$db = getenv('DB_NAME') ?: 'u250848_travelly';
+$user = getenv('DB_USER') ?: 'YOUR_DATABASE_USERNAME';
+$password = getenv('DB_PASS') ?: 'YOUR_DATABASE_PASSWORD';
 
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
