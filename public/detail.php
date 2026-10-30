@@ -3,7 +3,7 @@ require_once __DIR__ . '/../config/helpers.php';
 
 $pdo = null;
 try {
-    require_once '../config/db.php';
+    require_once __DIR__ . '/../config/database.php';
 } catch (Throwable $e) {
     $pdo = null;
 }

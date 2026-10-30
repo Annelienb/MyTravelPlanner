@@ -9,7 +9,7 @@ $isFirstRun = false;
 $csrfToken = csrfToken();
 
 try {
-    require '../config/database.php';
+    require __DIR__ . '/../config/database.php';
     $pdo->exec(
         'CREATE TABLE IF NOT EXISTS users (
             id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -22,7 +22,7 @@ try {
 } catch (PDOException $e) {
     error_log('Travelly database error: ' . $e->getMessage());
     $pdo = null;
-    $dbError = 'The database connection failed. Check your database settings and make sure the MySQL container is running.';
+    $dbError = 'The database connection failed. Check DB_HOST, DB_NAME, DB_USER and DB_PASS in your server configuration.';
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo) {

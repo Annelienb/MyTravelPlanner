@@ -6,7 +6,7 @@ $csrfToken = csrfToken();
 
 $pdo = null;
 try {
-    require_once '../config/database.php';
+    require_once __DIR__ . '/../config/database.php';
 } catch (Throwable $e) {
     $pdo = null;
 }

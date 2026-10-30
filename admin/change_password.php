@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/helpers.php';
 requireAdmin();
 
-require_once '../config/database.php';
+require_once __DIR__ . '/../config/database.php';
 
 $error = '';
 $success = '';

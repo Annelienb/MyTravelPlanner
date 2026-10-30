@@ -5,7 +5,7 @@ requireAdmin();
 $pdo = null;
 $databaseError = '';
 try {
-    require_once '../config/database.php';
+    require_once __DIR__ . '/../config/database.php';
 } catch (PDOException $e) {
     error_log('Travelly database error: ' . $e->getMessage());
     $pdo = null;
